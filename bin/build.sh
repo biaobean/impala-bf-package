@@ -12,7 +12,7 @@ rm spark-2.1.0-SNAPSHOT-bin-custom-spark.tgz
 
 ./dev/make-distribution.sh --name custom-spark --tgz -Phadoop-2.6 -Pyarn
 
-cd $BRANCH_BF_ROOT_DIR/impala
+cd $BRANCH_BF_ROOT_DIR/incubator-impala
 export IMPALA_HOME=`pwd`
 source $IMPALA_HOME/bin/impala-config.sh
 ./buildall.sh -notests -build_shared_libs
