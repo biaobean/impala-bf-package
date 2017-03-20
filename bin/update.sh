@@ -1,5 +1,8 @@
 #!/bin/sh
 
+cd $BRANCH_BF_ROOT_DIR/impala-bf-package
+git pull
+
 cd $BRANCH_BF_ROOT_DIR/spark
 git pull
 ## git log
