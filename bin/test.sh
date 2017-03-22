@@ -41,7 +41,17 @@ IMPALA_SHELL=$BRANCH_BF_ROOT_DIR/incubator-impala/bin/impala-shell.sh
 # $IMPALA_SHELL -q "DROP TABLE bf_real_data;"
 # $IMPALA_SHELL -q "CREATE EXTERNAL TABLE bf_real_data LIKE PARQUET '/data/bf_parq/$M_FILE' STORED AS PARQUET LOCATION '/data/bf_parq';"
 
+IMPALAD_LOG_FILE=$BRANCH_BF_ROOT_DIR/incubator-impala/logs/cluster/impalad.INFO
+rm $IMPALAD_LOG_FILE
+
 ###
 # Run Impala Test
 ###
-select * from bf_real_data where record_id = '1233024271'
+$IMPALA_SHELL -q "select * from bf_real_data where record_id = '1233024271';"
+
+##
+# Check Imapad Log
+##
+grep -q "HDFS Parquet Scanner with Bloom Filter support" $IMPALAD_LOG_FILE && echo "Bloom filter is enabled" || echo "[ERROR]:Bloom filter is NOT enabled"
+
+grep -q "[BF]Got stats on col" $IMPALAD_LOG_FILE && echo "Bloom filter is enabled" || echo "[ERROR]:Bloom filter is NOT enabled"
