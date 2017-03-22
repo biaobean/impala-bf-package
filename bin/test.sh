@@ -7,7 +7,7 @@ ls -l $M2_REPO_HOME/org/apache/parquet/parquet-format/2.3.1-SNAPSHOT/parquet-for
 ls -l $BRANCH_BF_ROOT_DIR/parquet-mr/parquet-tools/target/parquet-tools-1.8.2-SNAPSHOT.jar
 ls -l $M2_REPO_HOME/org/apache/parquet/parquet-tools/1.8.2-SNAPSHOT/parquet-tools-1.8.2-SNAPSHOT.jar
 
-ls -l $BRANCH_BF_ROOT_DIR//parquet-mr/parquet-tools/dependency-reduced-pom.xml
+ls -l $BRANCH_BF_ROOT_DIR/parquet-mr/parquet-tools/dependency-reduced-pom.xml
 ls -l $M2_REPO_HOME/org/apache/parquet/parquet-tools/1.8.2-SNAPSHOT/parquet-tools-1.8.2-SNAPSHOT.pom
 
 ls -l $BRANCH_BF_ROOT_DIR/parquet-mr/parquet-tools/target/parquet-tools-1.8.2-SNAPSHOT-tests.jar
