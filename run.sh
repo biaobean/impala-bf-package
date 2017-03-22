@@ -8,3 +8,8 @@ cd ..
 
 ln -s $PWD/native-toolchain/build $PWD/incubator-impala/toolchain
 sh impala-bf-package/bin/build.sh
+
+source incubator-impala/bin/impala-config.sh
+./start-impala-cluster.py -s 1
+
+sh impala-bf-package/bin/test.sh
